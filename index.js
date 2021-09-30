@@ -1,11 +1,13 @@
 require('dotenv').config()
 const path = require('path')
+const cors = require('cors')
 
 console.log(`web46 rulez!!!`)
 
 const express = require('express')
 
 const server = express()
+server.use(cors())
 server.use(express.json())
 server.use(express.static(
     path.join(__dirname, 'client/build')
